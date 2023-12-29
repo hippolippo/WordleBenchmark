@@ -1,9 +1,9 @@
-from solver_interface import WordleSolver, Human
+from .solver_interface import WordleSolver, Human
 from typing import Type
-from wordle import *
+from .wordle import *
 
 MAX_GUESS = 100
-def benchmark(solver: Type[WordleSolver], dictionary="valid_words"):
+def benchmark(solver: Type[WordleSolver], dictionary="old_potential_answers"):
     results = dict()
     for word in open(dictionary):
         word = word.strip()

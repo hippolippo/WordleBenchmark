@@ -1,4 +1,4 @@
-from wordle import Wordle
+from .wordle import Wordle
 from abc import ABC, abstractmethod
 
 class WordleSolver(ABC):
@@ -11,7 +11,7 @@ class WordleSolver(ABC):
         pass
 
     @abstractmethod
-    def get_first_guess(self, ) -> str:
+    def get_first_guess(self) -> str:
         pass
 
 # An example of how to implement WordleSolver
