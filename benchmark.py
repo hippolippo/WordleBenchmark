@@ -1,11 +1,12 @@
 from .solver_interface import WordleSolver, Human
 from typing import Type
 from .wordle import *
+from os import path
 
 MAX_GUESS = 100
-def benchmark(solver: Type[WordleSolver], dictionary="old_potential_answers"):
+def benchmark(solver: Type[WordleSolver], dictionary="valid_words"):
     results = dict()
-    for word in open(dictionary):
+    for word in open(path.join(path.dirname(path.abspath(__file__)), dictionary)):
         word = word.strip()
         if word in results: continue
         instance = solver()
